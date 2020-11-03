@@ -8,6 +8,14 @@
 import UIKit
 
 class TodosController: UITableViewController {
+    
+    var todos = [
+        Todo(name: "敲代码", checked: false),
+        Todo(name: "喂chara", checked: false),
+        Todo(name: "吃烤肉", checked: false),
+        Todo(name: "弹钢琴", checked: false)
+    
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +36,7 @@ class TodosController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return todos.count
     }
 
     
@@ -37,8 +45,11 @@ class TodosController: UITableViewController {
 
         // Configure the cell...
 //        cell.textLabel?.text =
-        cell.checkMark.text = "√"
-        cell.todo.text = "乱学一下iOS"
+
+        
+        cell.checkMark.text = todos[indexPath.row].checked ? "√" : ""
+        cell.todo.text = todos[indexPath.row].name
+            //"乱学一下iOS"
         return cell
     }
     
