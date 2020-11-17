@@ -1,21 +1,13 @@
 //
-//  TodosController.swift
+//  TodoController.swift
 //  Todos
 //
-//  Created by 小石头 on 2020/11/3.
+//  Created by 小石头 on 2020/11/17.
 //
 
 import UIKit
 
-class TodosController: UITableViewController {
-    
-    var todos = [
-        Todo(name: "敲代码", checked: false),
-        Todo(name: "喂chara", checked: false),
-        Todo(name: "吃烤肉", checked: false),
-        Todo(name: "弹钢琴", checked: false)
-    
-    ]
+class TodoController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,38 +23,24 @@ class TodosController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return todos.count
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "todo", for: indexPath) as! TodoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-//        cell.textLabel?.text =
 
-        
-        cell.checkMark.text = todos[indexPath.row].checked ? "√" : ""
-        cell.todo.text = todos[indexPath.row].name
-            //"乱学一下iOS"
         return cell
     }
-    
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        todos[indexPath.row].checked = !todos[indexPath.row].checked
-        let cell = tableView.cellForRow(at: indexPath) as! TodoCell
-        cell.checkMark.text = todos[indexPath.row].checked ? "√" : ""
-        //点击后取消选择状态 去底色
-        tableView.deselectRow(at: indexPath, animated: true)
-    } 
-    
-    
+    */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
